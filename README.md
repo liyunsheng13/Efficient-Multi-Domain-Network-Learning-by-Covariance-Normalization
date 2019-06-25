@@ -38,7 +38,7 @@ python covnorm_train_adpter.py --data-dir /path/to/dataset/256_ObjectCategories 
 ### Train CovNorm
 * Using pretrained Residual Adapter to extract features for residual adapter and intialization to train CovNorm. It can be downloaded:
   * [Caltech256-RA](https://drive.google.com/file/d/1lRpwIZjrdac_0SpUFIwCdoLKMCFj70sQ/view?usp=sharing)
-* Extracting features for residual adapter (The pre-extracted features can also be download [Caltech256-feat]())
+* Extracting features for residual adapter (The pre-extracted features can also be download [Caltech256-feat](https://drive.google.com/file/d/1OCm3uORVIt7rrNSqc4kq8ZK7W8YVqRZ1/view?usp=sharing))
 
 ```
 python covnorm_feature_extractor.py --data-dir /path/to/dataset/256_ObjectCategories \
