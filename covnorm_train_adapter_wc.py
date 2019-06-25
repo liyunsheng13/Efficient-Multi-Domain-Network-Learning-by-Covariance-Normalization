@@ -33,7 +33,7 @@ def get_arguments():
                         help="number of workers for multithread dataloading.")
     parser.add_argument("--data-dir", type=str, default='/data5/yunsheng/dataset',
                         help="Path to the directory containing the source dataset.") 
-    parser.add_argument("--init-weight", type=str, default='/data5/yunsheng/',
+    parser.add_argument("--pretrained-ra", type=str, default='/data5/yunsheng/',
                         help="Path to the initial weights.")     
     parser.add_argument("--learning-rate", type=float, default=1e-3,
                         help="Base learning rate for training with polynomial decay.")
@@ -76,7 +76,7 @@ args.gpu = 0
 
 pca_dim, pca_dir = PCA_Dim_Compute(os.path.join(args.data_dir, 'features'), args.pca_ratio)
 model = VGG(pca_dir=pca_dir, num_classes=args.num_classes, dim=pca_dim, pca=True)
-model.initialize_weights(pretrained=True, weight_path=osp.join(args.init_weight, 'model_best.pth'), feat_path=os.path.join(args.data_dir, 'features'))
+model.initialize_weights(pretrained=True, weight_path=osp.join(args.pretrained_ra), feat_path=os.path.join(args.data_dir, 'features'))
     
 
 cudnn.benchmark = True

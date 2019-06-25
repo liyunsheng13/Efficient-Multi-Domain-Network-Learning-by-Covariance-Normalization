@@ -32,15 +32,15 @@ def get_arguments():
                         help="Path to the directory containing the source dataset.")
     parser.add_argument("--num-classes", type=int, default=1000,
                         help="Number of classes to predict (including background).")
-    parser.add_argument("--snapshot-dir", type=str, default='/path/to/checkpoints/',
+    parser.add_argument("--pretrained-ra", type=str, default='/path/to/checkpoints/',
                         help="Where to save snapshots of the model.")    
     parser.add_argument("--gpu", type=int, default=0,
                         help="choose gpu device.")
     parser.add_argument("--start", type=int, default=0,
                         help="Number of epoch.") 
-    parser.add_argument("--end", type=int, default=1e10,
+    parser.add_argument("--end", type=int, default=None,
                         help="Number of epoch.")   
-    parser.add_argument("--length", type=int, default=1e10,
+    parser.add_argument("--length", type=int, default=None,
                         help="length of dataset.")     
     return parser.parse_args()
 
@@ -94,9 +94,9 @@ os.environ["CUDA_VISIBLE_DEVICES"] = str(args.gpu)
 args.gpu = 0
 
 model = VGG(num_classes=args.num_classes)
-pretrained = True
-if pretrained:
-    params = torch.load(args.snapshot_dir)['state_dict']
+
+if args.pretrained_ra is not None:
+    params = torch.load(args.pretrained_ra)['state_dict']
     new_params = model.state_dict().copy()
     for i in params:
         # Scale.layer5.conv2d_list.3.weight
@@ -108,6 +108,8 @@ model.load_state_dict(new_params)
 
 cudnn.benchmark = True
 
+if args.end is None:
+    args.end = args.length
 Trainloader = data.DataLoader(
     DataSet(args.data_dir, start=args.start, end=args.end, mean=IMG_MEAN),
     batch_size=1, shuffle=False, num_workers=args.num_workers, pin_memory=True)
