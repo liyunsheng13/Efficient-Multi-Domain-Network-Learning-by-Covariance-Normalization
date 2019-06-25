@@ -21,7 +21,7 @@ If you use this code in your research please consider citing
 
 ### Train Residual Adapter
 * The initial model can be found:
-  * [VGG16-RA](https://drive.google.com/file/d/16RxJyGEtTX7LKB3m_hu8uywtzzNCrH7b/view?usp=sharing)
+  * [VGG16-RA](https://drive.google.com/file/d/1hm6VHNwNRpRVGTh8YnWSai4jf2cjttue/view?usp=sharing)
 * Training and Evaluation example:
 
 ```
