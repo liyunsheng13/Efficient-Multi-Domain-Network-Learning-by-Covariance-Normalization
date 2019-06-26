@@ -53,6 +53,15 @@ python covnorm_feature_extractor.py --data-dir /path/to/dataset/256_ObjectCatego
 python pca/pca.py --root /path/to/Caltech256-feat
 ```
 * Using whitening and re-coloring matrix to help train CovNorm (Thw whitening and re-coloring matrix can also be downloaded [Caltech256-whrc](https://drive.google.com/file/d/1rdoR9XopsLfIq-0lgY0z_tlxle-I3xwv/view?usp=sharing))
+  * Using pretrained model [Caltech256-CovNorm](https://drive.google.com/file/d/1v9LiWl9gKRV24ZCO5sx5MI5443zqwJC7/view?usp=sharing) to evaluate:
+```
+python covnorm_eval_adapter_wc.pyt --data-dir /path/to/dataset/256_ObjectCategories \
+                                   --num-classes 257 \
+                                   --snapshot-dir /path/to/snapshots/Caltech256-CovNorm \
+                                   --pca-ratio 0.995 \
+                                   --gpu 0
+```
+  * Training from whiterning and re-coloring matrix:
 ```
 python covnorm_train_adapter_wc.py --data-dir /path/to/dataset/256_ObjectCategories \
                                    --num-classes 257 \
