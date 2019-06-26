@@ -76,6 +76,5 @@ python covnorm_eval_adapter_wc.pyt --data-dir /path/to/dataset/256_ObjectCategor
                                    --gpu 0
 ```
 
-```
 ### Other Datasets
 The other datasets can be downloaded [Cifar100](https://drive.google.com/file/d/1PmtIQiXiUSKxIPhpEZMVugZg5Hpw0X2l/view?usp=sharing), [SUN397](https://drive.google.com/file/d/1XGdxTWtHXA7LqNRpR9HiF5TXFpQhpJHt/view?usp=sharing), [FGVC](https://drive.google.com/file/d/1bMQyPYYT_RWTlGwmdbZA0_YlAViK4L5y/view?usp=sharing), [Flowers](https://drive.google.com/file/d/1OroXoQqTpatSezxnK_IKyQsDxgTIiB0i/view?usp=sharing), [SVHN](https://drive.google.com/file/d/1Dr1lNetA4n0eStN34CeTAxFc8htMcnkE/view?usp=sharing) and [MITIndoor](https://drive.google.com/file/d/14LkGcCJdKXhoUMRF3iBn051r3lDmEIWv/view?usp=sharing)
