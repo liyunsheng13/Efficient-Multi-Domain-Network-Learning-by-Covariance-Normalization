@@ -53,14 +53,6 @@ python covnorm_feature_extractor.py --data-dir /path/to/dataset/256_ObjectCatego
 python pca/pca.py --root /path/to/Caltech256-feat
 ```
 * Using whitening and re-coloring matrix to help train CovNorm (Thw whitening and re-coloring matrix can also be downloaded [Caltech256-whrc](https://drive.google.com/file/d/1rdoR9XopsLfIq-0lgY0z_tlxle-I3xwv/view?usp=sharing))
-  * Using pretrained model [Caltech256-CovNorm](https://drive.google.com/file/d/1v9LiWl9gKRV24ZCO5sx5MI5443zqwJC7/view?usp=sharing) to evaluate:
-```
-python covnorm_eval_adapter_wc.pyt --data-dir /path/to/dataset/256_ObjectCategories \
-                                   --num-classes 257 \
-                                   --snapshot-dir /path/to/snapshots/Caltech256-CovNorm \
-                                   --pca-ratio 0.995 \
-                                   --gpu 0
-```
   * Training from whiterning and re-coloring matrix:
 ```
 python covnorm_train_adapter_wc.py --data-dir /path/to/dataset/256_ObjectCategories \
@@ -75,3 +67,13 @@ python covnorm_train_adapter_wc.py --data-dir /path/to/dataset/256_ObjectCategor
 ```
 ### Other Datasets
 The other datasets can be downloaded [Cifar100](https://drive.google.com/file/d/1PmtIQiXiUSKxIPhpEZMVugZg5Hpw0X2l/view?usp=sharing), [SUN397](https://drive.google.com/file/d/1XGdxTWtHXA7LqNRpR9HiF5TXFpQhpJHt/view?usp=sharing), [FGVC](https://drive.google.com/file/d/1bMQyPYYT_RWTlGwmdbZA0_YlAViK4L5y/view?usp=sharing), [Flowers](https://drive.google.com/file/d/1OroXoQqTpatSezxnK_IKyQsDxgTIiB0i/view?usp=sharing), [SVHN](https://drive.google.com/file/d/1Dr1lNetA4n0eStN34CeTAxFc8htMcnkE/view?usp=sharing) and [MITIndoor](https://drive.google.com/file/d/14LkGcCJdKXhoUMRF3iBn051r3lDmEIWv/view?usp=sharing)
+
+### Evaluate CovNorm
+* Using pretrained model [Caltech256-CovNorm](https://drive.google.com/file/d/1v9LiWl9gKRV24ZCO5sx5MI5443zqwJC7/view?usp=sharing) to evaluate:
+```
+python covnorm_eval_adapter_wc.pyt --data-dir /path/to/dataset/256_ObjectCategories \
+                                   --num-classes 257 \
+                                   --snapshot-dir /path/to/snapshots/Caltech256-CovNorm \
+                                   --pca-ratio 0.995 \
+                                   --gpu 0
+```
