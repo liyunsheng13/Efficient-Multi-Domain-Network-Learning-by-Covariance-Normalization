@@ -69,7 +69,7 @@ python covnorm_train_adapter_wc.py --data-dir /path/to/dataset/256_ObjectCategor
 ### Evaluate CovNorm
 * Using pretrained model [Caltech256-CovNorm](https://drive.google.com/file/d/1v9LiWl9gKRV24ZCO5sx5MI5443zqwJC7/view?usp=sharing) to evaluate:
 ```
-python covnorm_eval_adapter_wc.pyt --data-dir /path/to/dataset/256_ObjectCategories \
+python covnorm_eval_adapter_wc.py --data-dir /path/to/dataset/256_ObjectCategories \
                                    --num-classes 257 \
                                    --snapshot-dir /path/to/snapshots/Caltech256-CovNorm \
                                    --pca-ratio 0.995 \
