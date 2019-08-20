@@ -25,7 +25,7 @@ If you use this code in your research please consider citing
 * Training and Evaluation example:
 
 ```
-python covnorm_train_adpter.py --data-dir /path/to/dataset/256_ObjectCategories \
+python covnorm_train_adapter.py --data-dir /path/to/dataset/256_ObjectCategories \
                                --num-classes 257 \
                                --weight-decay 0.0005 \
                                --gamma 5 \
